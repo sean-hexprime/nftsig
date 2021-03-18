@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><!-- font awesome 5 free -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"><!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"><!-- Poppins font from Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;600;900&amp;display=swap" rel="stylesheet"><!-- Your Custom CSS file that will include your blocks CSS -->
+  <link rel="stylesheet" href="./Template_02.css">
+  <title>NFTYSIG | Digital Signatures for NFTs</title>
+  <meta property="og:image" content="https://i.imgur.com/EQ6c19n.png" />
+  <!-- favicon CSS -->
+  <link rel="icon" type="image/png" sizes="32x32" href="logo.svg">
+</head>
+
+<body>
+  <!-- Put the blocks HTML here -->
+  <!------------------------------>
+  <!-- HERO ---------------->
+  <!------------------------------>
+  <header class="hero container-fluid">
+    <div class="hero__content container mx-auto">
+      <!-- I'm putting the nav inside this "fixed-nav-container" to fix some issues happens on scroll -->
+      <div class="fixed-nav-container">
+        <nav class="hero-nav position-relative container mx-auto px-0">
+          <ul class="nav w-100 list-unstyled align-items-center p-0">
+            <li class="hero-nav__item"><a href=""><img class="hero-nav__logo" src="logo-dark.png" change-src-onscroll="logo.png" alt="our logo"></a><!-- Don't remove this empty span --><span class="mx-2"></span></li>
+
+
+            <li id="hero-menu" class="flex-grow-1 hero__nav-list hero__nav-list--mobile-menu ft-menu">
+              <ul class="hero__menu-content nav flex-column flex-lg-row ft-menu__slider animated list-unstyled p-2 p-lg-0">
+                <li class="flex-grow-1">
+                  <ul class="nav nav--lg-side flex-column-reverse flex-lg-row-reverse list-unstyled align-items-center p-0">
+                    <li class="hero-nav__item"><a href="" target="_blank" class="btn btn-primary">NFT Signer</a></li>
+                    <li class="hero-nav__item"><a href="" class="hero-nav__link">Docs</a></li>
+                    <li class="hero-nav__item"><a href="" class="hero-nav__link">Exchange</a></li>
+                    <li class="hero-nav__item"><a href="#!" class="hero-nav__link">Forum</a></li>
+
+
+                  </ul>
+                </li>
+              </ul><button close-nav-menu="" class="ft-menu__close-btn animated"><svg class="bi bi-x" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z" clip-rule="evenodd"></path>
+                  <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z" clip-rule="evenodd"></path>
+                </svg></button>
+            </li>
+            <li class="hero-nav__item d-lg-none d-flex flex-row-reverse"><button open-nav-menu="" class="text-center px-2"><i class="fas fa-bars"></i></button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="hero__body">
+        <div class="row px-0 mx-0">
+          <div class="col-lg-7 px-0 mx-0">
+            <h1 class="hero__title mb-4">Digital Autographs on the Blockchain.</h1>
+            <p class="hero__paragraph mb-5">NFTYSIG is a platform to empower creators and thought leaders to make a lasting imprint on the world. We make it easy to verifiably sign any NFT in a matter of seconds - creating eternal digital memorabilia. </p>
+            <div class="hero__btns-container"><a class="hero__btn btn btn-primary mb-2 mb-lg-0 mx-1 mx-lg-2" href="">Sign An NFT Now</a></div>
+          </div>
+
+          <div class="col-lg-5 mt-5 mt-lg-0">
+            <div class="hero__img-container"><img class="hero__img w-100" src="https://media.giphy.com/media/wizL7smKikV8qr3ySN/giphy.gif"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <script src="https://unpkg.com/tua-body-scroll-lock"></script>
+  <script>
+    var showDropdown = function(e) {
+        e.currentTarget.classList.add("hero-nav__item--show-dropdown")
+      },
+      hideDropdown = function(e) {
+        e.currentTarget.classList.remove("hero-nav__item--show-dropdown")
+      },
+      toggleDropdown = function(e) {
+        e.currentTarget.classList.toggle("hero-nav__item--show-dropdown")
+      };
+
+    function setupDropdowns(n) {
+      document.querySelectorAll(".hero-nav__item--with-dropdown").forEach(function(e) {
+        var o, t;
+        n.matches ? ((o = e.classList).contains("hero-nav__item--dropdown-left") && o.contains("hero-nav__item--dropdown-right") || (t = e.getBoundingClientRect().width, e.querySelector(".dropdown").style.transform = "translateX(calc(-50% + " + t / 2 + "px))"), e.addEventListener("mouseenter", showDropdown), e.addEventListener("mouseleave", hideDropdown), e.querySelector(".hero-nav__link").removeEventListener("click", toggleDropdown)) : (e.removeEventListener("mouseenter", showDropdown), e.removeEventListener("mouseleave", hideDropdown), e.querySelector(".dropdown").style.transform = "", e.addEventListener("click", toggleDropdown))
+      })
+    }
+    var mediaQuery = window.matchMedia("(min-width: 992px)");
+    setupDropdowns(mediaQuery), mediaQuery.addListener(function(e) {
+      var o;
+      setupDropdowns(e), e.matches && ((o = document.querySelector("#hero-menu")).style.height = "", bodyScrollLock.unlock(o))
+    });
+    var heroMenu = document.querySelector("#hero-menu");
+
+    function closeMenuAndGoTo(o) {
+      document.querySelector("#hero-menu").classList.toggle("ft-menu--js-show");
+      var e = document.querySelector("#hero-menu");
+      if (e.style.height = "", bodyScrollLock.unlock(e), "#" === o || !document.querySelector(o)) return !1;
+      setTimeout(function() {
+        var e = document.querySelector(o);
+        window.scrollTo({
+          top: e.getBoundingClientRect().top,
+          behavior: "smooth"
+        })
+      }, 250)
+    }
+    document.querySelector("[close-nav-menu]").onclick = function(e) {
+      heroMenu.classList.toggle("ft-menu--js-show"), bodyScrollLock.unlock(heroMenu)
+    }, document.querySelector("[open-nav-menu]").onclick = function(e) {
+      heroMenu.classList.toggle("ft-menu--js-show"), heroMenu.style.height = window.innerHeight + "px", bodyScrollLock.lock(heroMenu)
+    }, document.querySelector("#hero-menu").querySelectorAll("[href*='#']").forEach(function(o) {
+      o.onclick = function(e) {
+        e.preventDefault(), closeMenuAndGoTo(o.getAttribute("href"))
+      }
+    });
+    var nav = document.querySelector(".hero-nav");
+    window.onscroll = function(e) {
+      var o = document.querySelector("[change-src-onscroll]");
+      window.scrollY > nav.getBoundingClientRect().height ? (nav.classList.contains("hero-nav--is-sticky") || (window.logoSrc = o.getAttribute("src"), o.setAttribute("src", o.getAttribute("change-src-onscroll")), o.setAttribute("change-src-onscroll", logoSrc)), nav.classList.add("hero-nav--is-sticky")) : 0 === window.scrollY && (nav.classList.contains("hero-nav--is-sticky") && (window.logoSrc = o.getAttribute("src"), o.setAttribute("src", o.getAttribute("change-src-onscroll")), o.setAttribute("change-src-onscroll", logoSrc)), nav.classList.remove("hero-nav--is-sticky"))
+    };
+    var languageDropdown = document.querySelector("[javascript-language-selector]");
+    languageDropdown.onclick = function(e) {
+      e.target.classList.contains("dropdown__link") && (languageDropdown.querySelector(".dropdown__link--selected").classList.remove("dropdown__link--selected"), e.target.classList.add("dropdown__link--selected"), document.querySelector(".language-image").setAttribute("src", e.target.querySelector("img").getAttribute("src")))
+    }
+  </script>
+  <!------------------------------>
+  <!-- RIGHT FEATURE ---------------->
+  <!------------------------------>
+  <div class="block-8-scr space-between-blocks" style="background: #fff">
+    <div class="container position-relative">
+      <div class="row px-2 align-items-center flex-column-reverse flex-lg-row">
+        <!-- CONTENT -->
+        <div class="col-lg-6 position-relative mt-4 mt-lg-0">
+          <h1 class="block__title black">Own a signed piece of history. </h1>
+
+          <p class="block__paragraph block__paragraph--big mb-5 black">With NFTYSIG, digital signatures are possible, making it easy for Elon Musk to sign that latest DOGE NFT to even Michael Jordan signing his own rookie NBA TOPSHOT.</p>
+        </div><!-- IMAGE -->
+        <div class="col-lg-6 my-5 my-lg-0 p-lg-5 text-center">
+          <div class="block-8-scr__img-container position-relative"><img class="block-8-scr__img w-50" src="jordan.png"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!------------------------------>
+  <!-- LEFT FEATURE ---------------->
+  <!------------------------------>
+  <div class="block-8-scr space-between-blocks" style="background: #000">
+    <div class="container position-relative">
+      <div class="row px-2 align-items-center flex-column-reverse flex-lg-row">
+        <!-- IMAGE -->
+        <div class="col-lg-6 my-5 my-lg-0 p-lg-5 text-center">
+          <div class="block-8-scr__img-container position-relative"><img class="block-8-scr__img w-100" src="https://media.giphy.com/media/l3vQY8bPVo0AXj3P2/giphy.gif"></div>
+        </div><!-- CONTENT -->
+        <div class="col-lg-6 position-relative mt-4 mt-lg-0">
+          <h1 class="block__title mb-3">Take any NFT. Turn it into something bigger.</h1>
+          <p class="block__paragraph block__paragraph--big mb-0">NFTYSIG works with any NFT out of the box and makes it easy as 1-2-3 to sign and list on any of the leading NFT marketplaces from Rarible to OpenSea.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!------------------------------>
+  <!-- RIGHT FEATUR ---------------->
+  <!------------------------------>
+
+  <!------------------------------>
+  <!-- TESTIMONIAL ---------------->
+  <!------------------------------>
+
+  <!------------------------------>
+<!--Section Name---------------->
+<!------------------------------>
+
+<!------------------------------>
+<!--Section Name---------------->
+<!------------------------------>
+<div class="steps-block space-between-blocks">
+  <div class="container">
+    <!-- HEADER -->
+    <div class="col-lg-8 col-xl-7 mx-auto text-center mb-5">
+      <h1 class="block__title mb-3">How To Get Started Using NFTYSIG</h1>
+    </div>
+    <div class="row px-2 align-items-start justify-content-center">
+      <div class="the-step col-md-6 col-lg-4">
+        <div class="the-step__symbol-container"><span class="the-step__symbol">01</span></div>
+        <div class="the-step__content">
+          <h4 class="the-step__title">Stake your NFT</h4>
+          <p class="the-step__paragraph">Buy any NFT whether its the latest NBA Topshot or an NFT of Elon Musk. Grab some NFTYSIG tokens and head over to NFTYSIG's portal and simply choose to stake your NFT on our platform. </p>
+        </div><svg class="the-step__arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </div>
+      <div class="the-step col-md-6 col-lg-4">
+        <div class="the-step__symbol-container"><span class="the-step__symbol">02</span></div>
+        <div class="the-step__content">
+          <h4 class="the-step__title">Have your NFT signed</h4>
+          <p class="the-step__paragraph">Staking your NFT locks it up in NFTYSIG and generates a custom link which you can send to any celebrity or person to sign your NFT. After receiving your custom link, any person can sign your NFT with a selfie, voice, or wallet signature.</p>
+        </div><svg class="the-step__arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </div>
+      <div class="the-step col-md-6 col-lg-4">
+        <div class="the-step__symbol-container"><span class="the-step__symbol">03</span></div>
+        <div class="the-step__content">
+          <h4 class="the-step__title">You're done!</h4>
+          <p class="the-step__paragraph">NFTYSIG intelligently signs your NFT and creates a new NFTYSIG NFT from your old NFT which can now be traded instantly on any of the leading NFT marketplaces.</p>
+        </div><svg class="the-step__arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="block-12 space-between-blocks" style="background: #000">
+  <div class="container-xl">
+    <!-- HEADER -->
+    <div class="col-lg-8 col-xl-7 mx-auto text-center mb-5">
+      <h1 class="block__title mb-3 white">An advancement in NFT technology.</h1>
+      <p class="block__paragraph pb-4 white">NFTSIG brings verifiable and superimposed signature technology to any NFT. Through this breakthrough, anyone is able to sign any NFT in a quick and simple method. In addition, NFTSIG is a platform which provides significant utility to holders through its unique burn mechanism. </p>
+    </div><!-- BODY -->
+    <div class="row px-2">
+      <div class="col-lg-4 mb-2-1rem">
+        <div class="card-1">
+          <div class="card-1__content">
+            <h3 class="card-1__title">NFTYSIG Vault</h3>
+            <p class="card-1__paragraph">To mint a signable NFT a user must first purchase NFTYSIG tokens (which are burnt upon minting) and aquire their desired NFT. At launch we will have an inagural phase where each unique signable link will cost a fixed 100 NFTYSIG to generate - however this cost will gradually increase through governance proposals in the NFTYSIG DAO. When a NFTYSIG NFT is minted, the original NFT is locked up in a NFTYSIG Vault and in order to prevent the market with being flooded with derivatives of a given NFT, it will cost 10x the minting cost to unstake and receive the original NFT back. </p>
+            <a href="">
+            <div class="card-1__button-container"><span class="card-1__cta-text">Learn More</span><span class="mx-1"></span><svg class="card-1__cta-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+              </svg></div></a>
+          </div>
+          <div class="card-1__shapes"><svg xmlns="http://www.w3.org/2000/svg" width="174.462" height="124.886" viewBox="0 0 174.462 124.886">
+              <g>
+                <path d="M0 42.821l81.5 48.07L80.117 0zm2.763 0L78.736 2.252 80.117 88.4zm133.767-12.86l.815 45.777 37.116-23.483zm1.381 2.431l33.856 19.836-33.082 20.982zm-47.7 89.731l29.464 2.763-11.047-27.447zm2.569-1.146l15.457-20.72 9.31 23.068z"></path>
+                <path d="M101.6 22.58L44.63 41.407 68.444 61.63l23.828 20.223z" transform="translate(17.019 8.61)"></path>
+              </g>
+            </svg></div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-2-1rem">
+        <div class="card-1 card-1--selected">
+          <div class="card-1__content">
+            <h3 class="card-1__title">Intelligent Signing</h3>
+            <p class="card-1__paragraph">NFTSIG uses three main methods to ensure the trustworthiness of the ecosytem. First, metadata from the original NFT is captured in any signed NFTYSIG NFT. This ensures that clones cannot simply be signed and sold as they will have different metadata upon inspection. Secondly, each NFT signing event generates a one time link that can be used by the receipient to sign an NFT. Lastly, all NFTs can be verifiably signed through any of the verified methods such as selfie and voice imposing, twitter verification, and even on chain wallet signing. One unique aspect of NFTSIG is that signed NFTs can be signed themselves and through this method its possible for an NFT such as an NBA Topshot NFT to have the signatures of the entire basketball team! </p>
+            <a href="">
+            <div class="card-1__button-container"><span class="card-1__cta-text">Discover <b>NFTSIG</b></span><span class="mx-1"></span><svg class="card-1__cta-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+              </svg></div></a>
+          </div>
+          <div class="card-1__shapes"><svg xmlns="http://www.w3.org/2000/svg" width="174.462" height="124.886" viewBox="0 0 174.462 124.886">
+              <g>
+                <path d="M0 42.821l81.5 48.07L80.117 0zm2.763 0L78.736 2.252 80.117 88.4zm133.767-12.86l.815 45.777 37.116-23.483zm1.381 2.431l33.856 19.836-33.082 20.982zm-47.7 89.731l29.464 2.763-11.047-27.447zm2.569-1.146l15.457-20.72 9.31 23.068z"></path>
+                <path d="M101.6 22.58L44.63 41.407 68.444 61.63l23.828 20.223z" transform="translate(17.019 8.61)"></path>
+              </g>
+            </svg></div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-2-1rem">
+        <div class="card-1">
+          <div class="card-1__content">
+            <h3 class="card-1__title">Token Incentives</h3>
+            <p class="card-1__paragraph">NFTSIG's NSIG token is a governance token which allows the community to decide its future utility and the utility of the NFTSIG ecosystem. Proposals could include increasing the signing costs of NFT's to even adding a tax on every NSIG transaction.  At launch, each signing of an NFT will lead to NSIG tokens being burnt - thus increasing the value of each individual NSIG token. </p>
+            <a href="">
+            <div class="card-1__button-container"><span class="card-1__cta-text">Tokenomics</span><span class="mx-1"></span><svg class="card-1__cta-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+              </svg></div></a>
+          </div>
+          <div class="card-1__shapes"><svg xmlns="http://www.w3.org/2000/svg" width="174.462" height="124.886" viewBox="0 0 174.462 124.886">
+              <g>
+                <path d="M0 42.821l81.5 48.07L80.117 0zm2.763 0L78.736 2.252 80.117 88.4zm133.767-12.86l.815 45.777 37.116-23.483zm1.381 2.431l33.856 19.836-33.082 20.982zm-47.7 89.731l29.464 2.763-11.047-27.447zm2.569-1.146l15.457-20.72 9.31 23.068z"></path>
+                <path d="M101.6 22.58L44.63 41.407 68.444 61.63l23.828 20.223z" transform="translate(17.019 8.61)"></path>
+              </g>
+            </svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="block-12__shape-for-background"></div>
+</div>
+  <!------------------------------>
+  <!-- FAQ ---------------->
+  <!------------------------------>
+
+  <!------------------------------>
+  <!-- CTA ---------------->
+  <!------------------------------>
+  <div class="block-32 space-between-blocks">
+    <div class="container">
+      <div class="col-lg-8 col-xl-7 mx-auto text-center mb-4">
+        <h1 class="block__title">Signatures express emotion and humanity.</h1>
+        <h1 class="block__title">Have your NFT signed today.</h1>
+      </div>
+      <div class="text-center mt-1"><a href="" class="btn btn-primary">Sign an NFT now!</a></div>
+    </div>
+  </div>
+  <script>
+    function submitForm(t) {
+      t.preventDefault();
+      var n = t.target.querySelector("button");
+      if (n.classList.contains("btn--loading")) return !1;
+      n.classList.add("btn--loading");
+      try {
+        setTimeout(function() {
+          n.classList.remove("btn--loading")
+        }, 2e3)
+      } catch (t) {
+        console.log(t), n.classList.remove("btn--loading")
+      }
+    }
+  </script>
+  <!------------------------------>
+  <!-- FOOTER ---------------->
+  <!------------------------------>
+  <div class="block-44 py-5">
+    <div class="container">
+      <div class="row px-0 mx-0 justify-content-center align-items-center">
+        <div class="block-44__logo-container"><img class="block-44__logo" src="logo-dark.png"></div>
+        <ul class="block-44__list list-unstyled justify-content-center mb-0">
+
+          <li class="block-44__li-1"><a href="#!" class="block-44__link">Forum</a></li>
+          <li class="block-44__li-1"><a href="#!" class="block-44__link">Exchange</a></li>
+          <li class="block-44__li-1"><a href="" class="block-44__link">Docs</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="block-44__divider">
+    <div class="container">
+      <div class="row flex-column flex-md-row px-2 justify-content-center">
+        <div class="flex-grow-1">
+          <ul class="block-44__extra-links d-flex list-unstyled p-0">
+            <li class="mx-2"><a href="" class="block-44__link m-0"><i class="fab fa-twitter"></i></a></li>
+            <li class="mx-2"><a href="https://t.co/5CB0ymEQy5?amp=1" class="block-44__link m-0"><i class="fab fa-telegram"></i></a></li>
+            <li class="mx-2"><a href="" class="block-44__link m-0"><i class="fab fa-medium"></i></a></li>
+          </ul>
+        </div>
+        <p class="block-44__copyrights">© 2021 NFTYSIG. All Rights Reserved.</p>
+      </div>
+      <div><h2 class="h3-font mb-2 paddtop block-44__copyrights">Legal Disclaimer</h2>
+                <p class="block-44__copyrights">The information provided on this website does not constitute investment advice, financial advice, trading advice, or any other sort of advice and you should not treat any of the website's content as such. The NSIG team does not recommend that any cryptocurrency should be bought, sold, or held by you. Do conduct your own due diligence. By purchasing NSIG , you agree that you are not purchasing a security or investment and you agree to hold the team harmless and not liable for any losses or taxes you may incur. You also agree that the team is presenting the token "as is" and is not legally required to provide any support or services. You should have no expectation of any form from NSIG and its team. Always make sure that you are in compliance with your local laws and regulations before you make any purchase.</p><div>
+                  <p class="block-44__copyrights">TERMS OF SERVICE
+If you are located, incorporated, a resident, or a citizen of a restricted country, then you are not allowed to participate in the private sale, public sale, or use our services and trading platform. If you access or use our services or trading platform whilst being from a restricted country or provide false representations about the location of your incorporation, residency or citizenship, NFTYSIG reserves the right to close any of your accounts and liquidate all open positions. NFTYSIG also reserves the right to blacklist wallets from our services and trading platform that are believed to be from a restricted county.
+RESTRICTED COUNTRIES
+The United States of America
+Hong Kong Special Administrative Region of the People’s Republic of China
+Bermuda
+Cuba
+Crimea and Sevastopol
+Iran
+Syria
+North Korea
+Sudan
+Australia
+Canada
+Any state, country or other jurisdiction embargoed by the United States of America
+Any country where using our services would be considered illegal through relative laws of said country</p>
+    </div>
+
+  </div><!-- Put the blocks HTML here -->
+</body>
+
+</html>
